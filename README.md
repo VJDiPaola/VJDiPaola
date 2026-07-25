@@ -16,6 +16,13 @@ The usual answer to "is this agent safe to deploy" is another approval step. Six
 
 Shipping into a real workflow, with cost boundaries, honest metrics, and a human release decision.
 
+### [software-factory](https://github.com/VJDiPaola/software-factory)
+Spec in, gated and reviewed code out. Parallel builders work over disjoint file ownership, a deterministic gate decides what ships, one bounded repair gets a second try, and a human makes the release call. It reports **first-pass yield**, which counts only units clean on attempt 1, so a factory that repairs everything cannot report 100%.
+
+> **Trade-off:** the reviewer model is structurally unable to clear a gate failure. It can slow a release down and never authorize one. There is a test asserting the override path does not exist.
+
+`Python` · `deterministic gates` · `parallel agents` · `CI-asserted yield`
+
 ### [earned-autonomy](https://github.com/VJDiPaola/earned-autonomy)
 A support agent whose tool permissions are earned. Every side-effecting action type starts at tier 0. An LLM-as-judge eval runner scores real tickets, a reflection agent reads those results through the Phoenix MCP server, and it files a promotion request citing trace IDs as evidence. A human approves, and the risk gate behaves differently on the very next tool call.
 
@@ -72,6 +79,13 @@ CLI and core library for portable AI context. Import, validate, and export proje
 
 `TypeScript` · `vitest` · `monorepo`
 
+### [skill-forge](https://github.com/VJDiPaola/skill-forge)
+A skill library for AI coding agents with a CI quality gate. 38 skills, one canonical source synced to four tools, and an 18-check eval harness that fails the build on a malformed skill. Skill libraries rot silently: a description stops describing a trigger, a cross-link dangles, a project name leaks into a general skill and starts misfiring elsewhere. None of it throws an error.
+
+> **Trade-off:** three severity levels, but only errors fail the build. A gate that fails on style opinions gets switched off within a week.
+
+`Python` · `GitHub Actions` · `PowerShell + Bash` · `schema validation`
+
 ### [sales-prompt-library](https://github.com/VJDiPaola/sales-prompt-library)
 Reusable AI prompts for sales workflows, written while carrying quota and adopted by the team around me.
 
@@ -79,7 +93,6 @@ Reusable AI prompts for sales workflows, written while carrying quota and adopte
 
 ## Shipping next
 
-- **A software factory.** Spec in, reviewed and tested code out, with a deterministic gate before merge and a first-pass yield metric that excludes anything a human had to repair.
 - **An evidence-gated renewal agent for GTM teams.** Structured claims bound to source records, deterministic checks that can hard-stop a release, one bounded self-repair, and a human approval before anything leaves the system. Public in August.
 
 ---
