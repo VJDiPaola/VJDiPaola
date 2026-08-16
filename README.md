@@ -48,7 +48,7 @@ Of those twenty experiments, **7 improved the agent, 6 made it measurably worse,
 `TypeScript` · `SpacetimeDB` · `parameter sweeps` · `Vickrey auction modeling`
 
 ### [skill-forge](https://github.com/VJDiPaola/skill-forge)
-An 18-check CI gate for AI coding-agent skills. Skill libraries rot silently: a description stops describing a trigger, a cross-link dangles, a project name leaks into a general skill. None of it throws an error. The skills in the tree are the test corpus. The product is the harness.
+A 19-check CI gate for AI coding-agent skills. Skill libraries rot silently: a description stops describing a trigger, a cross-link dangles, a project name leaks into a general skill. None of it throws an error. The skills in the tree are the test corpus. The product is the harness.
 
 > **Trade-off:** three severity levels, but only errors fail the build. A gate that fails on style opinions gets switched off within a week. Grade A is a linter grade, not proof the skills make agents better.
 
